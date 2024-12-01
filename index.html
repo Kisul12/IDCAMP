@@ -17,7 +17,7 @@
                 <h1>Trust Build</h1>
             </div>
     
-            <div class="navbar"
+            <div class="navbar">
                 <ul class="nav-list">
                     <li><a href="">Tentang Kami</a></li>
                     <li><a href="">Produk</a></li>
@@ -45,60 +45,128 @@
                 </div>
             </section>
 
-            <img src="/asset/build-illustrator.png" alt="">
+            <img src="./asset/build-illustrator.png" alt="">
         </aside>
 
         <div class="container-tittle">
             <p>Selamat Datang di Trust Build</p>
+            <div class="row">
+                <article>
+                    <img class="col-img" src="asset/keunggulan/row-1.png" alt="">
+                </article>            
+    
+                <article>
+                    <img class="col-img" src="asset/keunggulan/row-3.png" alt="">
+                </article>
+                
+                <article>
+                    <img class="col-img" src="asset/keunggulan/row-2.png" alt="">
+    
+                </article>
+            </div>
         </div>
         
-        <div class="row">
-            <article>
-                <img class="col-img" src="asset/keunggulan/row-1.png" alt="">
-            </article>            
 
-            <article>
-                <img class="col-img" src="asset/keunggulan/row-3.png" alt="">
-            </article>
-            
-            <article>
-                <img class="col-img" src="asset/keunggulan/row-2.png" alt="">
-
-            </article>
+        <div class="our-project">
+            <p>Proyek Kami</p>
+            <div id="portfolio-cards" class="portfolio-cards">
+                <!-- Card akan ditambahkan di sini melalui JavaScript -->
+            </div>
         </div>
+        
     </main>
 
     <footer>
-        <!-- <h2>Ini adalah footer</h2> -->
+        <div class="footer-container">
+            
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="">Syarat & Ketentuan</a></li>
+                    <li><a href="">Karir</a></li>
+                    <li><a href="">Privasi</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <p>Ikuti Kami</p>
+                <ul>
+                    <li><a href="#"><img src="asset/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="asset/instagram.png" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="asset/twitter.png" alt="Twitter"></a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Trust Build. All Rights Reserved.</p>
+        </div>
     </footer>
+    
 
-    <!-- Script untuk ganti background -->
-    <!-- <script>
-        // Array berisi gambar yang ingin digunakan
-        const backgroundImages = [
-            'asset/back1.png',
-            'asset/property-8.png',
-        ];
-
-        // Ambil elemen aside
-        const asideElement = document.getElementById('dynamic-aside');
-
-        // Variabel untuk melacak indeks gambar saat ini
-        let currentIndex = 0;
-
-        // Fungsi untuk mengganti background image
-        function changeBackground() {
-            // Ganti background image aside
-            asideElement.style.backgroundImage = `url(${backgroundImages[currentIndex]})`;
-
-            // Update indeks ke gambar berikutnya
-            currentIndex = (currentIndex + 1) % backgroundImages.length;
+    <script>
+        const projectData = [
+        {
+            id: 1,
+            name: "Villa Tropis",
+            price: "Rp 1.200.000.000",
+            type: "Vila",
+            imageUrl: "./asset/property-1.png"  
+        },
+        {
+            id: 2,
+            name: "Rumah Minimalis",
+            price: "Rp 750.000.000",
+            type: "Rumah",
+            imageUrl: "./asset/property-2.png"  
+        },
+        {
+            id: 3,
+            name: "Skandanavia House",
+            price: "Rp 850.000.000",
+            type: "Villa",
+            imageUrl: "./asset/property-3.png"  
+        },
+        {
+            id: 4,
+            name: "Villa Tropis",
+            price: "Rp 1.200.000.000",
+            type: "Vila",
+            imageUrl: "./asset/property-4.png"  
+        },
+        {
+            id: 5,
+            name: "Rumah Minimalis",
+            price: "Rp 750.000.000",
+            type: "Rumah",
+            imageUrl: "./asset/property-5.png"  
+        },
+        {
+            id: 6,
+            name: "Chinese Villa",
+            price: "Rp 850.000.000",
+            type: "Villa",
+            imageUrl: "./asset/property-6.png"  
         }
-
-        // Set interval untuk mengganti gambar setiap beberapa detik
-        setInterval(changeBackground, 5000); // Ganti gambar setiap 5 detik
-
-    </script> -->
+    ];
+    
+    const portfolioContainer = document.getElementById('portfolio-cards');
+    
+    projectData.forEach(project => {
+        const card = document.createElement('div');
+        card.classList.add('portfolio-card');
+        card.innerHTML = `
+            <img src="${project.imageUrl}" alt="${project.name}" class="card-img">
+            <div class="card-details">
+                <h3>${project.name}</h3>
+                <p class="price">${project.price}</p>
+                <p class="type">${project.type}</p>
+            </div>
+        `;
+        portfolioContainer.appendChild(card);
+    });
+    
+        
+    </script>
 
 </body>
 </html>
